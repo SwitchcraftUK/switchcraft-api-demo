@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.d5da4f5d.chunk.css",
-    "main.js": "./static/js/main.6e708240.chunk.js",
-    "main.js.map": "./static/js/main.6e708240.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.6e611572.js",
-    "runtime-main.js.map": "./static/js/runtime-main.6e611572.js.map",
-    "static/js/2.40ce400f.chunk.js": "./static/js/2.40ce400f.chunk.js",
-    "static/js/2.40ce400f.chunk.js.map": "./static/js/2.40ce400f.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.f8b4a0ef4e586fca2e6f170e3f9cd09e.js": "./precache-manifest.f8b4a0ef4e586fca2e6f170e3f9cd09e.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/main.d5da4f5d.chunk.css.map": "./static/css/main.d5da4f5d.chunk.css.map",
-    "static/js/2.40ce400f.chunk.js.LICENSE.txt": "./static/js/2.40ce400f.chunk.js.LICENSE.txt"
+    "main.css": "/switchcraft-api-demo/static/css/main.d5da4f5d.chunk.css",
+    "main.js": "/switchcraft-api-demo/static/js/main.6ff6a9cc.chunk.js",
+    "main.js.map": "/switchcraft-api-demo/static/js/main.6ff6a9cc.chunk.js.map",
+    "runtime-main.js": "/switchcraft-api-demo/static/js/runtime-main.74b67617.js",
+    "runtime-main.js.map": "/switchcraft-api-demo/static/js/runtime-main.74b67617.js.map",
+    "static/js/2.40ce400f.chunk.js": "/switchcraft-api-demo/static/js/2.40ce400f.chunk.js",
+    "static/js/2.40ce400f.chunk.js.map": "/switchcraft-api-demo/static/js/2.40ce400f.chunk.js.map",
+    "index.html": "/switchcraft-api-demo/index.html",
+    "precache-manifest.18bb1a37f1a051b5cc32de13e03e20dd.js": "/switchcraft-api-demo/precache-manifest.18bb1a37f1a051b5cc32de13e03e20dd.js",
+    "service-worker.js": "/switchcraft-api-demo/service-worker.js",
+    "static/css/main.d5da4f5d.chunk.css.map": "/switchcraft-api-demo/static/css/main.d5da4f5d.chunk.css.map",
+    "static/js/2.40ce400f.chunk.js.LICENSE.txt": "/switchcraft-api-demo/static/js/2.40ce400f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6e611572.js",
+    "static/js/runtime-main.74b67617.js",
     "static/js/2.40ce400f.chunk.js",
     "static/css/main.d5da4f5d.chunk.css",
-    "static/js/main.6e708240.chunk.js"
+    "static/js/main.6ff6a9cc.chunk.js"
   ]
 }
