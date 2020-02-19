@@ -1,5 +1,9 @@
-const ghpages = require('gh-pages');
+const ghPages = require('gh-pages');
 
-ghpages.publish('build', function(err) {
-    console.log('failed to publish');
+ghPages.publish('build', (err) => {
+    if (err) {
+        console.log('Error deploying to github pages...');
+        console.log(err);
+        process.exit(1);
+    }
 });
