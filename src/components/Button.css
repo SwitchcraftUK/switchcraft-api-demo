@@ -1,0 +1,9 @@
+.c-btn {
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  width: 100%;
+  text-align: left;
+  line-height: 1.8;
+}

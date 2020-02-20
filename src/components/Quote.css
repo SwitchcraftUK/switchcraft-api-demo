@@ -1,0 +1,17 @@
+.c-quote {
+  background-color: rgba(0, 0, 0, 0.02);
+  margin-top: 20px;
+  width: 100%;
+  max-width: calc(100% - 20px);
+  text-align: left;
+  box-shadow: inset 1px 3px 3px 0px rgba(0,0,0,0.2);
+  border-left: 6px solid #00FFCC;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.c-quote__save-more {
+  font-weight: 700;
+}
