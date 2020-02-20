@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ENERGY_QUOTE_BACKEND_URL } from './config';
 import {SwitchUser} from "./SwitchUser";
+import {LoadingSpinner} from "./LoadingSpinner";
 
 const getQuote = async () => {
   const result = (await fetch(ENERGY_QUOTE_BACKEND_URL, { method: 'POST' })).json();
@@ -22,7 +23,7 @@ export const Quote = () => {
         <div>
             <button onClick={getQuoteClicked}>Get Quote</button>
             {
-                isLoading && <div>Loading...</div>
+                isLoading && <LoadingSpinner/>
             }
             {
                 !isLoading && quoteState && quoteState.tariffs && quoteState.tariffs.length > 0 &&

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ENERGY_SWITCH_BACKEND_URL } from './config';
+import {LoadingSpinner} from "./LoadingSpinner";
 
 const postSwitchUser = async () => {
     const result = (await fetch(ENERGY_SWITCH_BACKEND_URL, { method: 'POST' })).json();
@@ -21,7 +22,7 @@ export const SwitchUser = () => {
         <div>
             <button onClick={switchUserClicked}>Switch Energy</button>
             {
-                isLoading && <div>Loading...</div>
+                isLoading && <LoadingSpinner/>
             }
             {
                 !isLoading && switchState && (

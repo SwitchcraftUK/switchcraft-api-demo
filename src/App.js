@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Quote} from "./Quote";
+import {Quote} from './Quote';
 
 export const App = () => {
   return (
