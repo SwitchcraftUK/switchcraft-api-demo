@@ -4,6 +4,7 @@ import { TopBar } from './TopBar';
 import { Transcations } from './Transactions';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { SwitchUser } from './SwitchUser';
+import { Details } from './Details';
 
 export const App = () => {
   return (
@@ -14,6 +15,9 @@ export const App = () => {
           <Switch>
             <Route path='/switch'>
               <SwitchUser />
+            </Route>
+            <Route path='/details'>
+              <Details />
             </Route>
             <Route path='/'>
               <Transcations />

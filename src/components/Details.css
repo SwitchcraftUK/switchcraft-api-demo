@@ -1,0 +1,20 @@
+.c-details {
+  margin-top: 20px;
+}
+
+.c-details__field {
+  display: block;
+}
+
+.c-details__input {
+  border: 1px solid black;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.c-details__update-btn {
+  position: absolute;
+  padding: 20px;
+  bottom: 0;
+  width: calc(100% - 40px);
+}

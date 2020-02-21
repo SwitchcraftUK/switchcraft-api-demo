@@ -3,3 +3,11 @@
   padding: 0 20px 20px;
   box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.3);
 }
+
+.c-top-bar__burger-icon {
+  top: 14px;
+  right: 14px;
+  position: absolute;
+  background: none;
+  border: none;
+}
