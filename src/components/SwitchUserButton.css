@@ -1,0 +1,17 @@
+.c-switch-user-button {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 40px);
+}
+
+.c-switch-user-button__savings {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.c-switch-user-button__result {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}

@@ -1,48 +1,47 @@
 import React, { useState } from 'react';
 import { ENERGY_QUOTE_BACKEND_URL } from '../config';
-import { SwitchUser } from './SwitchUser';
 import { LoadingSpinner } from './LoadingSpinner';
 import { userDetails } from '../data/user-details';
 import './Quote.css';
 import { Button } from './Button';
+import { makeRequest } from '../utils/make-request';
+import { Link } from 'react-router-dom';
 
-const getQuote = async () => {
+const getQuote = () => {
   const data = {
     hasUserAcceptedTermsAndConditions: true,
     address: userDetails.address
   };
-  const result = (await fetch(ENERGY_QUOTE_BACKEND_URL, {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data),
-    method: 'POST'
-  })).json();
-  return result;
+  return makeRequest(data, ENERGY_QUOTE_BACKEND_URL);
 };
 
 export const Quote = () => {
   const [quoteState, setQuoteState] = useState(null);
   const [isLoading, setIsLoadingState] = useState(false);
 
-  const getQuoteClicked = async () => {
+  const getQuoteResult = async () => {
     setIsLoadingState(true);
     const quote = await getQuote();
     setQuoteState(quote);
+    localStorage.setItem('quoteState', JSON.stringify(quote));
     setIsLoadingState(false);
   };
 
+  const showSwitchButton = quoteState && quoteState.tariffs && quoteState.tariffs.length > 0;
+  const cheapestQuote = showSwitchButton && quoteState.tariffs[0];
   return (
-    <div className='c-quote'>
+    <div className={`c-quote${
+      showSwitchButton ? ' c-quote__button-shown' : ''
+    }`}>
       {
         isLoading
           ? <LoadingSpinner>Getting your quote...</LoadingSpinner>
-          : (
-            quoteState && quoteState.tariffs && quoteState.tariffs.length > 0
-          )
-            ? <SwitchUser quoteState={quoteState} />
+          : showSwitchButton
+            ? <Link className='c-quote__switch-user' to='/switch'>
+              Switch my energy and save £{cheapestQuote.annualSaving.toFixed(0)}
+            </Link>
             : (
-              <Button onClick={getQuoteClicked}>
+              <Button onClick={getQuoteResult}>
                 <span className='c-quote__save-more'>Want to save money on your energy?</span>
                 <br />
                 Click here to find out how much you could save

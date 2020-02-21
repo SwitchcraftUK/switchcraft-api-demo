@@ -12,6 +12,17 @@
   padding-left: 20px;
 }
 
+.c-quote__button-shown {
+  background-color: #00FFCC;
+}
+
+.c-quote__switch-user {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+
 .c-quote__save-more {
   font-weight: 700;
 }

@@ -1,0 +1,12 @@
+.c-outline-btn {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 18px;
+  background: #00FFCC;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}

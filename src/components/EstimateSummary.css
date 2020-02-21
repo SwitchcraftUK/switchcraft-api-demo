@@ -1,0 +1,10 @@
+.c-estimate-summary {
+  font-size: 12px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.c-estimate-summary__table {
+  font-size: 10px;
+  text-align: left;
+}

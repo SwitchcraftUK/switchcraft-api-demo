@@ -1,0 +1,54 @@
+.c-top-quote {
+  margin: 12px 4px 0;
+  box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.15);
+  border: 1px solid grey;
+}
+
+.c-top-quote__top-row {
+  display: flex;
+}
+
+.c-top-quote__row-item {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 12px;
+  margin: 4px 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.c-top-quote__supplier-logo {
+  width: 100%;
+}
+
+.c-top-quote__cost-text {
+  font-size: 14px;
+}
+
+.c-top-quote__cost {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.c-top-quote__saving {
+  font-weight: 700;
+  font-size: 18px;
+  color: #FF56AA;
+}
+
+.c-top-quote__currency {
+  font-size: 12px;
+}
+
+.c-top-quote__bottom-row {
+  border-top: 1px solid grey;
+  background: rgba(0, 0, 0, 0.12);
+  padding: 16px 12px;
+  font-size: 14px;
+}
+
+.c-top-quote__supplier-name {
+  font-weight: 700;
+}
