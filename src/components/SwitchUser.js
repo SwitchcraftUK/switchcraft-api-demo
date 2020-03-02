@@ -2,21 +2,25 @@ import React from 'react';
 import { EstimateSummary } from './EstimateSummary';
 import { TopQuoteDetails } from './TopQuoteDetails';
 import { SwitchUserButton } from './SwitchUserButton';
-import { userDetails } from '../data/user-details';
+import { useStateValue } from './State';
 import './SwitchUser.css';
+import { Redirect } from 'react-router';
 
 export const SwitchUser = () => {
-  const quoteState = JSON.parse(localStorage.getItem('quoteState'));
-  const topTariff = quoteState.tariffs[0];
+  const [{ address, quote }] = useStateValue();
+  if (!quote) {
+    return <Redirect to='/' />;
+  }
+  const topTariff = quote.tariffs[0];
 
   return (
     <div className='c-switch-user'>
       <div className='c-switch-user__top-quote-text'>
-        Your top quote for {userDetails.address.addressLine1}:
+        Your top quote for {address.addressLine1}:
       </div>
       <TopQuoteDetails topTariff={topTariff} />
-      <EstimateSummary estimate={quoteState.estimate} />
-      <SwitchUserButton userId={quoteState.userId} topTariff={topTariff} />
+      <EstimateSummary estimate={quote.estimate} />
+      <SwitchUserButton userId={quote.userId} topTariff={topTariff} />
     </div>
   );
 };

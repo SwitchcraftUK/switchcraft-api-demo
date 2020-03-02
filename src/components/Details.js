@@ -1,40 +1,42 @@
 import React, { useState } from 'react';
 import './Details.css';
-import { userDetails } from '../data/user-details';
 import { OutlineButton } from './OutlineButton';
+import { useStateValue } from './State';
+import { setAddress } from '../store';
+import { Input } from './Input';
 
 export const Details = () => {
+  const [{ address }, dispatch] = useStateValue();
+
   const [detailsState, setDetailsState] = useState({
-    postcode: userDetails.address.postcode,
-    addressLine1: userDetails.address.addressLine1
+    postcode: address.postcode,
+    addressLine1: address.addressLine1
   });
 
-  const setNewValue = (event) => {
+  const setNewValue = (target, value) => {
     setDetailsState({
       ...detailsState,
-      [event.target.name]: event.target.value
+      [target]: value
     });
   };
 
   const updateDetails = () => {
-    userDetails.address = detailsState;
+    dispatch(setAddress(detailsState));
     window.history.back();
   };
 
   return <div className='c-details'>
     <label className='c-details__field'>
       Postcode
-      <input className='c-details__input'
-        name='postcode'
-        onChange={setNewValue}
+      <Input className='c-details__input'
+        onChange={(value) => setNewValue('postcode', value)}
         type='text'
         value={detailsState.postcode} />
     </label>
     <label className='c-details__field'>
       Address Line 1
-      <input className='c-details__input'
-        name='addressLine1'
-        onChange={setNewValue}
+      <Input className='c-details__input'
+        onChange={(value) => setNewValue('addressLine1', value)}
         type='text'
         value={detailsState.addressLine1} />
     </label>

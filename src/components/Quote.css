@@ -2,7 +2,7 @@
   background-color: rgba(0, 0, 0, 0.02);
   margin-top: 20px;
   width: 100%;
-  max-width: calc(100% - 20px);
+  max-width: calc(100% - 26px);
   text-align: left;
   box-shadow: inset 1px 3px 3px 0px rgba(0,0,0,0.2);
   border-left: 6px solid #00FFCC;
@@ -20,9 +20,13 @@
   font-size: 18px;
   text-decoration: none;
   color: black;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .c-quote__save-more {
   font-weight: 700;
+}
+
+.c-quote__error {
+  font-size: .75rem;
 }

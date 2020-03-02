@@ -3,13 +3,17 @@ export const makeRequest = async (
   url,
   method = 'POST'
 ) => {
-  const result = (await fetch(url, {
+  const request = await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': 'switchcraft-test-key'
     },
     body: JSON.stringify(data),
     method
-  })).json();
+  });
+  const result = await request.json();
+  if (request.status === 500) {
+    throw result;
+  }
   return result;
 };

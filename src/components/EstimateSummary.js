@@ -9,7 +9,7 @@ const FuelEstimateSummary = ({
     <td>{fuelName}</td>
     <td>{fuelEstimate.supplierName}</td>
     <td>{fuelEstimate.tariffName}</td>
-    <td>{fuelEstimate.paymentType}</td>
+    <td>{fuelEstimate.isPrepay ? 'Prepay' : 'Credit'}</td>
     <td>{fuelEstimate.kwUsagePerMonth.toFixed(0)}kW</td>
   </tr>
 ) : null;
@@ -30,8 +30,8 @@ export const EstimateSummary = ({
         </tr>
       </thead>
       <tbody>
-        <FuelEstimateSummary fuelName='Electricity' fuelEstimate={estimate.elecEstimate} />
-        <FuelEstimateSummary fuelName='Gas' fuelEstimate={estimate.gasEstimate} />
+        <FuelEstimateSummary fuelName='Electricity' fuelEstimate={estimate.elec} />
+        <FuelEstimateSummary fuelName='Gas' fuelEstimate={estimate.gas} />
       </tbody>
     </table>
   </div>

@@ -5,9 +5,11 @@ import { Transcations } from './Transactions';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { SwitchUser } from './SwitchUser';
 import { Details } from './Details';
+import { StateProvider } from './State';
+import { appReducer, initAppState } from '../store';
 
-export const App = () => {
-  return (
+export const App = () =>
+  <StateProvider initialState={initAppState()} reducer={appReducer}>
     <Router>
       <div className='c-app'>
         <TopBar />
@@ -26,5 +28,4 @@ export const App = () => {
         </div>
       </div>
     </Router>
-  );
-};
+  </StateProvider>;

@@ -1,5 +1,6 @@
 .c-details {
   margin-top: 20px;
+  padding: 1rem;
 }
 
 .c-details__field {
@@ -7,14 +8,13 @@
 }
 
 .c-details__input {
-  border: 1px solid black;
-  line-height: 20px;
-  margin-bottom: 12px;
+  margin: 6px 0 24px;
+  width: calc(100% - 1rem);
 }
 
 .c-details__update-btn {
   position: absolute;
-  padding: 20px;
+  padding: 20px 0;
   bottom: 0;
-  width: calc(100% - 40px);
+  width: calc(100% - 2rem);
 }
