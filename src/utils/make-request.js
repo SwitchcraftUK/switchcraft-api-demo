@@ -12,7 +12,7 @@ export const makeRequest = async (
     method
   });
   const result = await request.json();
-  if (request.status === 400 || request.status === 500) {
+  if (request.status !== 200) {
     throw result;
   }
   return result;
