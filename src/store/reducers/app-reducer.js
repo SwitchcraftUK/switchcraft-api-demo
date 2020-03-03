@@ -30,13 +30,7 @@ const innerAppReducer = (state, action) => {
     case SET_ADDRESS:
       return {
         ...state,
-        address: {
-          ...action.address,
-          postcode: (action.address.postcode
-            ? action.address.postcode.replace(/\s/g, '').toUpperCase()
-            : null
-          )
-        },
+        address: action.address,
         quote: null
       };
 
