@@ -4,9 +4,18 @@ import './OutlineButton.css';
 
 export const OutlineButton = ({
   onClick,
-  children
+  children,
+  buttonColor
 }) => (
-  <button className='c-btn c-outline-btn' onClick={onClick}>
+  <button className='c-btn c-outline-btn'
+    onClick={onClick}
+    {
+      ...(buttonColor ? {
+        style: {
+          backgroundColor: buttonColor
+        }
+      } : {})
+    }>
     {children}
   </button>
 );

@@ -14,7 +14,7 @@ export const Intro = () => (
       </p>
     </div>
     <div className='c-intro__details'>
-      <Details buttonText='Start demo' floatingButton={false} />
+      <Details buttonText='Start demo' floatingButton={false} buttonColor='#FFFFFF' />
     </div>
   </div>
 );

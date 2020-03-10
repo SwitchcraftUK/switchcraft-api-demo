@@ -31,9 +31,9 @@ const QuoteError = ({ errorMessage }) => (
 
 export const Quote = () => {
   const [{ address, preferences }] = useStateValue();
+  const [{ quote }, dispatch] = useStateValue();
   const [isLoading, setIsLoadingState] = useState(false);
   const [errorState, setErrorState] = useState(null);
-  const [{ quote }, dispatch] = useStateValue();
 
   const getQuoteResult = async () => {
     setIsLoadingState(true);
@@ -50,7 +50,8 @@ export const Quote = () => {
   };
 
   useEffect(() => {
-    getQuoteResult()
+    getQuoteResult();
+    // eslint-disable-next-line
   }, []);
 
   const showSwitchButton = quote && quote.tariffs && quote.tariffs.length > 0;

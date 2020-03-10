@@ -9,7 +9,7 @@ import { Redirect } from 'react-router';
 export const SwitchUser = () => {
   const [{ address, quote }] = useStateValue();
   if (!quote) {
-    return <Redirect to='/' />;
+    return <Redirect to='/' push={true} />;
   }
   const topTariff = quote.tariffs[0];
 

@@ -5,7 +5,7 @@ import { useStateValue } from '../general/State';
 export const TopQuoteDetails = ({
   topTariff
 }) => {
-  const [{ preferences }, dispatch] = useStateValue();
+  const [{ preferences }] = useStateValue();
 
   return <div className='c-top-quote'>
     <div className='c-top-quote__top-row'>

@@ -9,7 +9,8 @@ import { Checkbox } from './Checkbox';
 
 export const Details = ({
   buttonText = 'Update details',
-  floatingButton = true
+  floatingButton = true,
+  buttonColor
 }) => {
   const [{ address, preferences }, dispatch] = useStateValue();
 
@@ -39,7 +40,7 @@ export const Details = ({
   };
 
   if (updateDetailsClickedState) {
-    return <Redirect to='/demo' />;
+    return <Redirect to='/demo' push={true} />;
   }
 
   return <div className='c-details'>
@@ -65,7 +66,7 @@ export const Details = ({
     </label>
 
     <div className={`c-details__update-btn${floatingButton ? ' c-details__update-btn__floating' : ''}`}>
-      <OutlineButton onClick={updateDetails}>
+      <OutlineButton onClick={updateDetails} buttonColor={buttonColor}>
         {buttonText}
       </OutlineButton>
     </div>
