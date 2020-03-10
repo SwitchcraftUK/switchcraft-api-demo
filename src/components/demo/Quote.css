@@ -10,23 +10,21 @@
   display: flex;
   align-items: center;
   padding-left: 20px;
+  transition: background-color 0.5s;
 }
 
-.c-quote__button-shown {
+.c-quote--button-shown {
   background-color: #00FFCC;
 }
 
 .c-quote__switch-user {
-  font-size: 18px;
+  font-size: 1.125rem;
   text-decoration: none;
   color: black;
   font-weight: 500;
 }
 
-.c-quote__save-more {
-  font-weight: 700;
-}
-
 .c-quote__error {
-  font-size: .75rem;
+  font-size: 1rem;
+  color: red;
 }
