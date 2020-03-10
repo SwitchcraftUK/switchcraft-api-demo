@@ -1,11 +1,11 @@
 import React from 'react';
 import './FullScreenLoading.css';
-import { LoadingSpinner } from '../general/LoadingSpinner';
+import { Loading } from '../general/Loading';
 
 export const FullScreenLoading = () => (
   <div className='c-full-screen-loading'>
-    <LoadingSpinner>
+    <Loading>
       Getting you a quote...
-    </LoadingSpinner>
+    </Loading>
   </div>
 );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ENERGY_SWITCH_BACKEND_URL } from '../../config';
-import { LoadingSpinner } from '../general/LoadingSpinner';
+import { Loading } from '../general/Loading';
 import './SwitchUserButton.css'
 import { OutlineButton } from '../general/OutlineButton';
 import { makeRequest } from '../../utils/make-request';
@@ -57,7 +57,7 @@ export const SwitchUserButton = ({
             <div className='c-switch-user-button__result'>
               {
                 isLoading
-                  ? <LoadingSpinner>Switching your energy...</LoadingSpinner>
+                  ? <Loading>Switching your energy...</Loading>
                   : !errorState ? 'Switch successful' : errorState
               }
             </div>

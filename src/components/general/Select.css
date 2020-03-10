@@ -1,0 +1,11 @@
+.c-select {
+  border: 1px solid #d1cdcd;
+  border-radius: 5px;
+  background: none;
+  height: 3rem;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

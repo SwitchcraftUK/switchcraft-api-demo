@@ -9,34 +9,40 @@ import { TransactionRow } from './TransactionRow';
 import { Redirect } from 'react-router';
 
 export const Transcations = () => {
-  const [{ address, preferences, quote, quoteError }, dispatch] = useStateValue();
+  const [{ address, quote, quoteError }, dispatch] = useStateValue();
   const [isLoading, setIsLoadingState] = useState(true);
 
-  const getQuoteResult = async () => {
-    setIsLoadingState(true);
-    try {
-      const quote = await getQuote(
-        address,
-        preferences
-      );
-      const savings = quote.tariffs
-        && quote.tariffs[0]
-        && quote.tariffs[0].annualSaving;
-      if (savings && savings > 0) {
-        dispatch(setQuote(quote));
-      } else {
-        dispatch(setQuoteError('No savings to be made for this address'));
-      }
-    } catch (err) {
-      dispatch(setQuoteError(err.message));
-    }
-    setIsLoadingState(false);
-  };
-
   useEffect(() => {
+    const controller = new AbortController();
+    const getQuoteResult = async () => {
+      setIsLoadingState(true);
+      try {
+        const quote = await getQuote(
+          address,
+          controller.signal
+        );
+        if (!quote) return;
+        const savings = quote
+          && quote.tariffs
+          && quote.tariffs[0]
+          && quote.tariffs[0].annualSaving;
+        if (savings && savings > 0) {
+          dispatch(setQuote(quote));
+        } else {
+          dispatch(setQuoteError('No savings to be made for this address'));
+        }
+      } catch (err) {
+        dispatch(setQuoteError(err.message));
+      }
+      setIsLoadingState(false);
+    };
     getQuoteResult();
-    // eslint-disable-next-line
-  }, []);
+    return () => {
+      if (!controller.signal.aborted) {
+         controller.abort();
+      }
+    };
+  }, [address, dispatch]);
 
   if (isLoading) {
     return <FullScreenLoading />;

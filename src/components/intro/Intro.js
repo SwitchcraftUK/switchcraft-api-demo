@@ -4,7 +4,7 @@ import './Intro.css';
 import { useStateValue } from '../general/State';
 
 export const Intro = () => {
-  const [{ quoteError }, dispatch] = useStateValue();
+  const [{ quoteError }] = useStateValue();
 
   return <div className='c-intro'>
     <div className='c-intro__text-section'>
