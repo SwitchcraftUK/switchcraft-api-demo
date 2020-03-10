@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TopBar.css';
 import { BurgerIcon } from '../general/BurgerIcon';
-import { Link } from 'react-router-dom';
 import { useStateValue } from '../general/State';
+import { Menu } from './Menu';
+import { CloseIcon } from '../general/CloseIcon';
 
 export const TopBar = () => {
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [{ bankDetails }] = useStateValue();
+
+  const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
+
   return (
     <header className='c-top-bar'>
-      <h3>Switchcraft Bank Account</h3>
-      <p>
+      <h3 className='c-top-bar__title'>Switchcraft Bank Account</h3>
+      <p className='c-top-bar__details'>
         {bankDetails.sortCode} {bankDetails.accountNumber}
       </p>
-      <Link
-        to='/demo/details'
-        className='c-top-bar__burger-icon'>
-        <BurgerIcon />
-      </Link>
+      <button className='c-top-bar__burger-icon'
+        onClick={toggleMenu} >
+          {
+            isMenuVisible ? <CloseIcon /> : <BurgerIcon />
+          }
+      </button>
+      {
+        isMenuVisible && <Menu itemClicked={toggleMenu} />
+      }
     </header>
   );
 };

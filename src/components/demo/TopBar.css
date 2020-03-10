@@ -4,10 +4,22 @@
   box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
+.c-top-bar__title {
+  position: relative;
+  z-index: 1;
+}
+
+.c-top-bar__details {
+  position: relative;
+  z-index: 1;
+}
+
 .c-top-bar__burger-icon {
-  top: 14px;
-  right: 14px;
+  top: 12px;
+  right: 12px;
   position: absolute;
   background: none;
   border: none;
+  z-index: 1;
+  cursor: pointer;
 }

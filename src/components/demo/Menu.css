@@ -1,0 +1,26 @@
+.c-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 7rem;
+  z-index: 1;
+}
+
+.c-menu__item {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #CCCCCC;
+  width: 100%;
+  display: inline-block;
+}
+
+.c-menu__item:last-child {
+  border-bottom: 1px solid #CCCCCC;
+}
