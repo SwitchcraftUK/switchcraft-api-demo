@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { ENERGY_QUOTE_BACKEND_URL } from '../config';
-import { LoadingSpinner } from './LoadingSpinner';
+import { ENERGY_QUOTE_BACKEND_URL } from '../../config';
+import { LoadingSpinner } from '../general/LoadingSpinner';
 import './Quote.css';
-import { Button } from './Button';
-import { makeRequest } from '../utils/make-request';
+import { Button } from '../general/Button';
+import { makeRequest } from '../../utils/make-request';
 import { Link } from 'react-router-dom';
-import { useStateValue } from './State';
-import { setQuote } from '../store';
+import { useStateValue } from '../general/State';
+import { setQuote } from '../../store';
 
 const getQuote = (
   address

@@ -13,8 +13,11 @@
 }
 
 .c-details__update-btn {
-  position: absolute;
   padding: 20px 0;
+}
+
+.c-details__update-btn__floating {
+  position: absolute;
   bottom: 0;
   width: calc(100% - 2rem);
 }

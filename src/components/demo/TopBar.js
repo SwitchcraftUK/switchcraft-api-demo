@@ -1,8 +1,8 @@
 import React from 'react';
 import './TopBar.css';
-import { BurgerIcon } from './BurgerIcon';
+import { BurgerIcon } from '../general/BurgerIcon';
 import { Link } from 'react-router-dom';
-import { useStateValue } from './State';
+import { useStateValue } from '../general/State';
 
 export const TopBar = () => {
   const [{ bankDetails }] = useStateValue();
@@ -13,7 +13,7 @@ export const TopBar = () => {
         {bankDetails.sortCode} {bankDetails.accountNumber}
       </p>
       <Link
-        to='/details'
+        to='/demo/details'
         className='c-top-bar__burger-icon'>
         <BurgerIcon />
       </Link>

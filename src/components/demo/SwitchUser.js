@@ -2,7 +2,7 @@ import React from 'react';
 import { EstimateSummary } from './EstimateSummary';
 import { TopQuoteDetails } from './TopQuoteDetails';
 import { SwitchUserButton } from './SwitchUserButton';
-import { useStateValue } from './State';
+import { useStateValue } from '../general/State';
 import './SwitchUser.css';
 import { Redirect } from 'react-router';
 

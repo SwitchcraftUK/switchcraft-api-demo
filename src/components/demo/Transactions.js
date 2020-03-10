@@ -1,6 +1,6 @@
 import React from 'react';
 import './Transactions.css';
-import { fakeTransactions } from '../data/fake-transactions';
+import { fakeTransactions } from '../../data/fake-transactions';
 import { Quote } from './Quote';
 
 const TransactionRow = ({

@@ -2,16 +2,24 @@ import React, { useState } from 'react';
 import './Details.css';
 import { OutlineButton } from './OutlineButton';
 import { useStateValue } from './State';
-import { setAddress } from '../store';
+import { setAddress } from '../../store';
 import { Input } from './Input';
+import { Redirect } from 'react-router';
 
-export const Details = () => {
+export const Details = ({
+  buttonText = 'Update details',
+  floatingButton = true
+}) => {
   const [{ address }, dispatch] = useStateValue();
 
   const [detailsState, setDetailsState] = useState({
     postcode: address.postcode,
     addressLine1: address.addressLine1
   });
+  const [
+    updateDetailsClickedState,
+    setUpdateDetailsClickedState
+  ] = useState(false);
 
   const setNewValue = (target, value) => {
     setDetailsState({
@@ -22,8 +30,12 @@ export const Details = () => {
 
   const updateDetails = () => {
     dispatch(setAddress(detailsState));
-    window.history.back();
+    setUpdateDetailsClickedState(true);
   };
+
+  if (updateDetailsClickedState) {
+    return <Redirect to='/demo' />;
+  }
 
   return <div className='c-details'>
     <label className='c-details__field'>
@@ -41,9 +53,9 @@ export const Details = () => {
         value={detailsState.addressLine1} />
     </label>
 
-    <div className='c-details__update-btn'>
+    <div className={`c-details__update-btn${floatingButton ? ' c-details__update-btn__floating' : ''}`}>
       <OutlineButton onClick={updateDetails}>
-        Update details
+        {buttonText}
       </OutlineButton>
     </div>
   </div>;

@@ -1,31 +1,17 @@
 import React from 'react';
-import './App.css';
-import { TopBar } from './TopBar';
-import { Transcations } from './Transactions';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import { SwitchUser } from './SwitchUser';
-import { Details } from './Details';
-import { StateProvider } from './State';
-import { appReducer, initAppState } from '../store';
+import { Demo } from './demo/Demo';
+import { Intro } from './intro/Intro';
+import { initAppState, appReducer } from '../store';
+import { StateProvider } from './general/State';
 
-export const App = () =>
+export const App = () => (
   <StateProvider initialState={initAppState()} reducer={appReducer}>
     <Router>
-      <div className='c-app'>
-        <TopBar />
-        <div className='c-app__inner'>
-          <Switch>
-            <Route path='/switch'>
-              <SwitchUser />
-            </Route>
-            <Route path='/details'>
-              <Details />
-            </Route>
-            <Route path='/'>
-              <Transcations />
-            </Route>
-          </Switch>
-        </div>
-      </div>
+      <Switch>
+        <Route path='/demo' component={Demo} />
+        <Route path='/' component={Intro} />
+      </Switch>
     </Router>
-  </StateProvider>;
+  </StateProvider>
+);

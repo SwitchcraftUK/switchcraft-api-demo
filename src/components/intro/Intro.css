@@ -1,0 +1,13 @@
+.c-intro {
+  max-width: 500px;
+  margin: 5rem auto 0;
+}
+
+.c-intro__text-section {
+  padding: 0 20px;
+  margin-bottom: 1rem;
+}
+
+.c-intro__heading {
+  margin-bottom: 0.5rem;
+}

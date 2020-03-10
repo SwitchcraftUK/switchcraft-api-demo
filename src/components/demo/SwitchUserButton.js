@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { ENERGY_SWITCH_BACKEND_URL } from '../config';
-import { LoadingSpinner } from './LoadingSpinner';
+import { ENERGY_SWITCH_BACKEND_URL } from '../../config';
+import { LoadingSpinner } from '../general/LoadingSpinner';
 import './SwitchUserButton.css'
-import { OutlineButton } from './OutlineButton';
-import { makeRequest } from '../utils/make-request';
-import { useStateValue } from './State';
+import { OutlineButton } from '../general/OutlineButton';
+import { makeRequest } from '../../utils/make-request';
+import { useStateValue } from '../general/State';
 
 const postSwitchUser = (
   userId,
