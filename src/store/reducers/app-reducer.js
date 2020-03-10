@@ -21,9 +21,6 @@ export const initAppState = () => {
     bankDetails: {
       accountNumber: '14457846',
       sortCode: '40-47-84'
-    },
-    preferences: {
-      warmHomeDiscount: false
     }
   };
 };
@@ -34,7 +31,6 @@ const innerAppReducer = (state, action) => {
       return {
         ...state,
         address: action.address,
-        preferences: action.preferences,
         quote: null
       };
 
@@ -56,8 +52,7 @@ export const appReducer = (state, action) => {
     JSON.stringify({
       address: newState.address,
       identity: newState.identity,
-      bankDetails: newState.bankDetails,
-      preferences: newState.preferences
+      bankDetails: newState.bankDetails
     })
   );
   return newState;

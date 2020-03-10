@@ -5,21 +5,17 @@ import { useStateValue } from './State';
 import { setDetails } from '../../store';
 import { Input } from './Input';
 import { Redirect } from 'react-router';
-import { Checkbox } from './Checkbox';
 
 export const Details = ({
   buttonText = 'Update details',
   floatingButton = true,
   buttonColor
 }) => {
-  const [{ address, preferences }, dispatch] = useStateValue();
+  const [{ address }, dispatch] = useStateValue();
 
   const [detailsState, setDetailsState] = useState({
     postcode: address.postcode,
-    addressLine1: address.addressLine1,
-    warmHomeDiscount: Boolean(
-      preferences && preferences.warmHomeDiscount
-    )
+    addressLine1: address.addressLine1
   });
   const [
     updateDetailsClickedState,
@@ -34,8 +30,7 @@ export const Details = ({
   };
 
   const updateDetails = () => {
-    const { warmHomeDiscount, ...address } = detailsState;
-    dispatch(setDetails(address, { warmHomeDiscount }));
+    dispatch(setDetails(detailsState));
     setUpdateDetailsClickedState(true);
   };
 
@@ -57,12 +52,6 @@ export const Details = ({
         onChange={(value) => setNewValue('addressLine1', value)}
         type='text'
         value={detailsState.addressLine1} />
-    </label>
-    <label className='c-details__field c-details__field--boolean'>
-      <Checkbox className='c-details__field__checkbox'
-        value={detailsState.warmHomeDiscount}
-        onChange={(value) => setNewValue('warmHomeDiscount', value)} />
-      I want to keep my warm home discount
     </label>
 
     <div className={`c-details__update-btn${floatingButton ? ' c-details__update-btn__floating' : ''}`}>

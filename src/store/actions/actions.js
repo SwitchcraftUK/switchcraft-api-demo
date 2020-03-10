@@ -1,7 +1,6 @@
 export const SET_DETAILS = 'SET_DETAILS';
-export const setDetails = (address, preferences) => ({
+export const setDetails = (address) => ({
   address,
-  preferences,
   type: SET_DETAILS
 });
 
