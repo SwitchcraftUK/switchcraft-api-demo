@@ -5,3 +5,7 @@
   display: flex;
   align-items: center;
 }
+
+.c-loading__spinner {
+  margin-right: 8px;
+}

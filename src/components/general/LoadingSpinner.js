@@ -1,6 +1,8 @@
 import React from 'react';
 import './LoadingSpinner.css';
 
-export const LoadingSpinner = () =>
-  <div className='c-loading__spinner'></div>;
+export const LoadingSpinner = ({
+  className
+}) =>
+  <div className={`c-loading-spinner${className ? ` ${className}` : ''}`}></div>
 

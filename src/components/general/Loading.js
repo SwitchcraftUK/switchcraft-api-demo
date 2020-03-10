@@ -6,7 +6,7 @@ import { LoadingSpinner } from './LoadingSpinner';
 export const Loading = ({
   children
 }) => <div className='c-loading'>
-  <LoadingSpinner />
+  <LoadingSpinner className='c-loading__spinner' />
   {children || 'Loading...'}
 </div>;
 
