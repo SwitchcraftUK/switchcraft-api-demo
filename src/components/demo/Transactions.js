@@ -6,9 +6,10 @@ import { getQuote } from '../../utils/get-quote';
 import { useStateValue } from '../general/State';
 import { setQuote, setQuoteError } from '../../store';
 import { TransactionRow } from './TransactionRow';
+import { Redirect } from 'react-router';
 
 export const Transcations = () => {
-  const [{ address, preferences, quote }, dispatch] = useStateValue();
+  const [{ address, preferences, quote, quoteError }, dispatch] = useStateValue();
   const [isLoading, setIsLoadingState] = useState(true);
 
   const getQuoteResult = async () => {
@@ -41,16 +42,19 @@ export const Transcations = () => {
     return <FullScreenLoading />;
   }
 
+  if (quoteError) {
+    return <Redirect to='/' />;
+  }
+
   return <div className='c-transactions'>
     { fakeTransactions
       .map(transaction => {
-        if (transaction.to === 'Energy Supplier') {
+        if (quote && transaction.to === 'Energy Supplier') {
           const firstTariff = quote.tariffs && quote.tariffs[0];
-          const amount = (
+          const amount =
             firstTariff ? (
               (firstTariff.annualSaving + firstTariff.annualCost) / 12
-            ) : transaction.amount
-          ).toFixed(0);
+            ).toFixed(0) : transaction.amount
           const to = Array.from(new Set(
             [
               quote.estimate.elec.hasFuel && quote.estimate.elec.supplierName,

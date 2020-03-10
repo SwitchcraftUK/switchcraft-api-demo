@@ -38,13 +38,14 @@ const innerAppReducer = (state, action) => {
     case SET_QUOTE:
       return {
         ...state,
-        quote: action.quote
+        quote: action.quote,
+        quoteError: null
       };
 
     case SET_QUOTE_ERROR:
       return {
         ...state,
-        quoteError: action.quoteError
+        quoteError: action.error
       };
 
     default:

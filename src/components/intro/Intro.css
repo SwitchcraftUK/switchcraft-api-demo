@@ -11,3 +11,11 @@
 .c-intro__heading {
   margin-bottom: 0.5rem;
 }
+
+.c-intro__quote-error {
+  color: red;
+  font-size: 1rem;
+  padding: 0 20px;
+  line-height: 1.5;
+  display: inline-block;
+}

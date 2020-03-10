@@ -1,9 +1,12 @@
 import React from 'react';
 import { Details } from '../general/Details'
 import './Intro.css';
+import { useStateValue } from '../general/State';
 
-export const Intro = () => (
-  <div className='c-intro'>
+export const Intro = () => {
+  const [{ quoteError }, dispatch] = useStateValue();
+
+  return <div className='c-intro'>
     <div className='c-intro__text-section'>
       <h2 className='c-intro__heading'>
         Welcome to the Switchcraft API demo
@@ -16,5 +19,12 @@ export const Intro = () => (
     <div className='c-intro__details'>
       <Details buttonText='Start demo' floatingButton={false} buttonColor='#FFFFFF' />
     </div>
+    {
+      quoteError && <span className='c-intro__quote-error'>
+        {quoteError}
+        <br />
+        Please try a different address
+      </span>
+    }
   </div>
-);
+};
