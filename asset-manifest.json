@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/switchcraft-api-demo/static/css/main.baadea1e.chunk.css",
-    "main.js": "/switchcraft-api-demo/static/js/main.1e713ffd.chunk.js",
-    "main.js.map": "/switchcraft-api-demo/static/js/main.1e713ffd.chunk.js.map",
+    "main.css": "/switchcraft-api-demo/static/css/main.835b2733.chunk.css",
+    "main.js": "/switchcraft-api-demo/static/js/main.4403c65b.chunk.js",
+    "main.js.map": "/switchcraft-api-demo/static/js/main.4403c65b.chunk.js.map",
     "runtime-main.js": "/switchcraft-api-demo/static/js/runtime-main.74b67617.js",
     "runtime-main.js.map": "/switchcraft-api-demo/static/js/runtime-main.74b67617.js.map",
-    "static/js/2.ff7cd1a3.chunk.js": "/switchcraft-api-demo/static/js/2.ff7cd1a3.chunk.js",
-    "static/js/2.ff7cd1a3.chunk.js.map": "/switchcraft-api-demo/static/js/2.ff7cd1a3.chunk.js.map",
+    "static/js/2.3b7cb4b5.chunk.js": "/switchcraft-api-demo/static/js/2.3b7cb4b5.chunk.js",
+    "static/js/2.3b7cb4b5.chunk.js.map": "/switchcraft-api-demo/static/js/2.3b7cb4b5.chunk.js.map",
     "index.html": "/switchcraft-api-demo/index.html",
-    "precache-manifest.7e8f4910a8a6bf2ed7e15d46b3186541.js": "/switchcraft-api-demo/precache-manifest.7e8f4910a8a6bf2ed7e15d46b3186541.js",
+    "precache-manifest.84508c35b6669bb88f157c74db8f4592.js": "/switchcraft-api-demo/precache-manifest.84508c35b6669bb88f157c74db8f4592.js",
     "service-worker.js": "/switchcraft-api-demo/service-worker.js",
-    "static/css/main.baadea1e.chunk.css.map": "/switchcraft-api-demo/static/css/main.baadea1e.chunk.css.map",
-    "static/js/2.ff7cd1a3.chunk.js.LICENSE.txt": "/switchcraft-api-demo/static/js/2.ff7cd1a3.chunk.js.LICENSE.txt"
+    "static/css/main.835b2733.chunk.css.map": "/switchcraft-api-demo/static/css/main.835b2733.chunk.css.map",
+    "static/js/2.3b7cb4b5.chunk.js.LICENSE.txt": "/switchcraft-api-demo/static/js/2.3b7cb4b5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.74b67617.js",
-    "static/js/2.ff7cd1a3.chunk.js",
-    "static/css/main.baadea1e.chunk.css",
-    "static/js/main.1e713ffd.chunk.js"
+    "static/js/2.3b7cb4b5.chunk.js",
+    "static/css/main.835b2733.chunk.css",
+    "static/js/main.4403c65b.chunk.js"
   ]
 }

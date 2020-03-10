@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/switchcraft-api-demo/precache-manifest.7e8f4910a8a6bf2ed7e15d46b3186541.js"
+  "/switchcraft-api-demo/precache-manifest.84508c35b6669bb88f157c74db8f4592.js"
 );
 
 self.addEventListener('message', (event) => {
