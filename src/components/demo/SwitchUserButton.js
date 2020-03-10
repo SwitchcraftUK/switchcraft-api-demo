@@ -36,7 +36,15 @@ export const SwitchUserButton = ({
       );
       setSwitchState(switchResponse);
     } catch (error) {
-      setErrorState(error.message);
+      if (error.code === 'duplicateSwitch') {
+        /**
+         * For the purposes of the demo we are assuming
+         * duplicate switches are complete.
+         */
+        setSwitchState({});
+      } else {
+        setErrorState(error.message);
+      }
     }
     setIsLoadingState(false);
   };
