@@ -5,8 +5,9 @@ export const fakeTransactions = [
     amount: '3.00'
   },
   {
+    // This transaction gets replaced in the code. The rest are static
     date: 'Yesterday',
-    to: 'British Gas',
+    to: 'Energy Supplier',
     amount: '70.00',
     reference: 'Gas and Electric'
   },

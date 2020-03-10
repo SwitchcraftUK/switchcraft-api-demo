@@ -1,4 +1,4 @@
-import { SET_DETAILS, SET_QUOTE } from '../actions';
+import { SET_DETAILS, SET_QUOTE, SET_QUOTE_ERROR } from '../actions';
 
 const switchcraftApiDemoStateKey = 'swc-api-demo-1.0.0';
 
@@ -21,7 +21,8 @@ export const initAppState = () => {
     bankDetails: {
       accountNumber: '14457846',
       sortCode: '40-47-84'
-    }
+    },
+    quoteError: null
   };
 };
 
@@ -38,6 +39,12 @@ const innerAppReducer = (state, action) => {
       return {
         ...state,
         quote: action.quote
+      };
+
+    case SET_QUOTE_ERROR:
+      return {
+        ...state,
+        quoteError: action.quoteError
       };
 
     default:

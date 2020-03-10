@@ -1,5 +1,4 @@
 .c-quote {
-  background-color: rgba(0, 0, 0, 0.02);
   margin-top: 20px;
   width: 100%;
   max-width: calc(100% - 26px);
@@ -10,10 +9,6 @@
   display: flex;
   align-items: center;
   padding-left: 20px;
-  transition: background-color 0.5s;
-}
-
-.c-quote--button-shown {
   background-color: #00FFCC;
 }
 
@@ -22,9 +17,4 @@
   text-decoration: none;
   color: black;
   font-weight: 500;
-}
-
-.c-quote__error {
-  font-size: 1rem;
-  color: red;
 }

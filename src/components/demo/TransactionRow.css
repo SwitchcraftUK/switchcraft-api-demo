@@ -1,0 +1,34 @@
+.c-transaction-row {
+  padding-bottom: 14px;
+}
+
+.c-transaction-row__date {
+  text-align: left;
+  background-color: #F4F4F4;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.c-transaction-row__inner {
+  text-align: left;
+  justify-content: space-between;
+  display: flex;
+  padding: 0 20px;
+}
+
+.c-transaction-row__to {
+  margin-bottom: 8px;
+}
+
+.c-transaction-row__reference {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.c-transaction-row__amount {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 16px;
+}

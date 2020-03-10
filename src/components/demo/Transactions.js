@@ -1,41 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Transactions.css';
 import { fakeTransactions } from '../../data/fake-transactions';
-import { Quote } from './Quote';
+import { FullScreenLoading } from './FullScreenLoading';
+import { getQuote } from '../../utils/get-quote';
+import { useStateValue } from '../general/State';
+import { setQuote, setQuoteError } from '../../store';
+import { TransactionRow } from './TransactionRow';
 
-const TransactionRow = ({
-  transaction,
-  showQuote
-}) => (
-  <div className='c-transaction-row'>
-    <div className='c-transaction-row__date'>{ transaction.date }</div>
-    <div className='c-transaction-row__inner'>
-      <div>
-        <p className='c-transaction-row__to'>{ transaction.to }</p>
-        {
-          transaction.reference &&
-          <p className='c-transaction-row__reference'>
-            { transaction.reference }
-          </p>
-        }
-      </div>
-      <div>
-        <p className='c-transaction-row__amount'>£{ transaction.amount }</p>
-      </div>
-    </div>
-    {
-      showQuote && <Quote />
+export const Transcations = () => {
+  const [{ address, preferences, quote }, dispatch] = useStateValue();
+  const [isLoading, setIsLoadingState] = useState(true);
+
+  const getQuoteResult = async () => {
+    setIsLoadingState(true);
+    try {
+      const quote = await getQuote(
+        address,
+        preferences
+      );
+      const savings = quote.tariffs
+        && quote.tariffs[0]
+        && quote.tariffs[0].annualSaving;
+      if (savings && savings > 0) {
+        dispatch(setQuote(quote));
+      } else {
+        dispatch(setQuoteError('No savings to be made for this address'));
+      }
+    } catch (err) {
+      dispatch(setQuoteError(err.message));
     }
-  </div>
-);
+    setIsLoadingState(false);
+  };
 
-export const Transcations = () => (
-  <div className='c-transactions'>
-    { fakeTransactions.map(
+  useEffect(() => {
+    getQuoteResult();
+    // eslint-disable-next-line
+  }, []);
+
+  if (isLoading) {
+    return <FullScreenLoading />;
+  }
+
+  return <div className='c-transactions'>
+    { fakeTransactions
+      .map(transaction => {
+        if (transaction.to === 'Energy Supplier') {
+          const firstTariff = quote.tariffs && quote.tariffs[0];
+          const amount = (
+            firstTariff ? (
+              (firstTariff.annualSaving + firstTariff.annualCost) / 12
+            ) : transaction.amount
+          ).toFixed(0);
+          const to = Array.from(new Set(
+            [
+              quote.estimate.elec.hasFuel && quote.estimate.elec.supplierName,
+              quote.estimate.gas.hasFuel && quote.estimate.gas.supplierName,
+            ].filter(val => Boolean(val))
+          )).join(' / ');
+          const reference = (
+            quote.estimate.elec.hasFuel
+            && quote.estimate.gas.hasFuel
+          ) ? 'Gas and Electric'
+            : quote.estimate.elec.hasFuel
+              ? 'Electric'
+              : 'Gas';
+
+          return {
+            ...transaction,
+            amount,
+            to,
+            reference
+          };
+        }
+        return transaction;
+      })
+      .map(
       (transaction, index) =>
         <TransactionRow key={index}
           transaction={transaction}
-          showQuote={index === 1 } />
+          showQuote={index === 1} />
     ) }
   </div>
-);
+};
