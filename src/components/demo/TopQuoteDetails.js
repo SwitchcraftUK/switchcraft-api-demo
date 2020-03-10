@@ -1,10 +1,13 @@
 import React from 'react';
 import './TopQuoteDetails.css';
+import { useStateValue } from '../general/State';
 
 export const TopQuoteDetails = ({
   topTariff
-}) => (
-  <div className='c-top-quote'>
+}) => {
+  const [{ preferences }, dispatch] = useStateValue();
+
+  return <div className='c-top-quote'>
     <div className='c-top-quote__top-row'>
       <div className='c-top-quote__row-item'>
         <img className='c-top-quote__supplier-logo'
@@ -32,6 +35,12 @@ export const TopQuoteDetails = ({
       <span className='c-top-quote__supplier-name'>{topTariff.supplierName}</span>
       &nbsp;
       {topTariff.tariffName}
+      {
+        preferences && preferences.warmHomeDiscount
+        && <span className='c-top-quote__warm-home-discount'>
+          This tariff will preserve your warm home discount
+          </span>
+      }
     </div>
-  </div>
-);
+  </div>;
+};

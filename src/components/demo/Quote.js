@@ -7,14 +7,22 @@ import { Link } from 'react-router-dom';
 import { useStateValue } from '../general/State';
 import { setQuote } from '../../store';
 
-const getQuote = (
-  address
+const getQuote = async (
+  address,
+  preferences
 ) => {
   const data = {
     hasUserAcceptedTermsAndConditions: true,
     address
   };
-  return makeRequest(data, ENERGY_QUOTE_BACKEND_URL);
+  const result = await makeRequest(data, ENERGY_QUOTE_BACKEND_URL);
+  if (preferences && preferences.warmHomeDiscount) {
+    return {
+      ...result,
+      tariffs: result.tariffs.filter(tariff => tariff.hasWarmHomeDiscount)
+    };
+  }
+  return result;
 };
 
 const QuoteError = ({ errorMessage }) => (
@@ -22,7 +30,7 @@ const QuoteError = ({ errorMessage }) => (
 );
 
 export const Quote = () => {
-  const [{ address }] = useStateValue();
+  const [{ address, preferences }] = useStateValue();
   const [isLoading, setIsLoadingState] = useState(false);
   const [errorState, setErrorState] = useState(null);
   const [{ quote }, dispatch] = useStateValue();
@@ -30,7 +38,10 @@ export const Quote = () => {
   const getQuoteResult = async () => {
     setIsLoadingState(true);
     try {
-      const quote = await getQuote(address);
+      const quote = await getQuote(
+        address,
+        preferences
+      );
       dispatch(setQuote(quote));
     } catch (err) {
       setErrorState(err.message);

@@ -1,7 +1,8 @@
-export const SET_ADDRESS = 'SET_ADDRESS';
-export const setAddress = (address) => ({
+export const SET_DETAILS = 'SET_DETAILS';
+export const setDetails = (address, preferences) => ({
   address,
-  type: SET_ADDRESS
+  preferences,
+  type: SET_DETAILS
 });
 
 export const SET_QUOTE = 'SET_QUOTE';

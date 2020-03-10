@@ -1,6 +1,6 @@
-import { SET_ADDRESS, SET_QUOTE } from '../actions';
+import { SET_DETAILS, SET_QUOTE } from '../actions';
 
-const switchcraftApiDemoStateKey = 'swc-api-demo';
+const switchcraftApiDemoStateKey = 'swc-api-demo-1.0.0';
 
 export const initAppState = () => {
   const storedState = JSON.parse(localStorage.getItem(switchcraftApiDemoStateKey));
@@ -21,16 +21,20 @@ export const initAppState = () => {
     bankDetails: {
       accountNumber: '14457846',
       sortCode: '40-47-84'
+    },
+    preferences: {
+      warmHomeDiscount: false
     }
   };
 };
 
 const innerAppReducer = (state, action) => {
   switch (action.type) {
-    case SET_ADDRESS:
+    case SET_DETAILS:
       return {
         ...state,
         address: action.address,
+        preferences: action.preferences,
         quote: null
       };
 
@@ -52,7 +56,8 @@ export const appReducer = (state, action) => {
     JSON.stringify({
       address: newState.address,
       identity: newState.identity,
-      bankDetails: newState.bankDetails
+      bankDetails: newState.bankDetails,
+      preferences: newState.preferences
     })
   );
   return newState;

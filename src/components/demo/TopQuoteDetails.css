@@ -52,3 +52,10 @@
 .c-top-quote__supplier-name {
   font-weight: 700;
 }
+
+.c-top-quote__warm-home-discount {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

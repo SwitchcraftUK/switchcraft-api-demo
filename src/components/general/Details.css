@@ -5,6 +5,17 @@
 
 .c-details__field {
   display: block;
+  cursor: pointer;
+}
+
+.c-details__field--boolean {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.c-details__field__checkbox {
+  margin-right: 0.5rem;
 }
 
 .c-details__input {
