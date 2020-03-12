@@ -10,7 +10,10 @@ export const makeRequest = async (
         'Content-Type': 'application/json',
         'Authorization': 'switchcraft-test-key'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        isDemoSite: true
+      }),
       method,
       signal
     });
