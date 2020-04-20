@@ -7,12 +7,12 @@ import { makeRequest } from '../../utils/make-request';
 import { useStateValue } from '../general/State';
 
 const postSwitchUser = (
-  userId,
+  switchId,
   identity,
   bankDetails
 ) => {
   const data = {
-    userId,
+    switchId,
     ...identity,
     bankDetails
   };
@@ -21,7 +21,7 @@ const postSwitchUser = (
 
 export const SwitchUserButton = ({
   topTariff,
-  userId
+  switchId
 }) => {
   const [{ identity, bankDetails }] = useStateValue();
   const [switchState, setSwitchState] = useState(null);
@@ -32,7 +32,7 @@ export const SwitchUserButton = ({
     setIsLoadingState(true);
     try {
       const switchResponse = await postSwitchUser(
-        userId, identity, bankDetails
+        switchId, identity, bankDetails
       );
       setSwitchState(switchResponse);
     } catch (error) {

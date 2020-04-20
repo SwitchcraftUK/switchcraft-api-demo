@@ -20,7 +20,7 @@ export const SwitchUser = () => {
       </div>
       <TopQuoteDetails topTariff={topTariff} />
       <EstimateSummary estimate={quote.estimate} />
-      <SwitchUserButton userId={quote.userId} topTariff={topTariff} />
+      <SwitchUserButton switchId={quote.switchId} topTariff={topTariff} />
     </div>
   );
 };
