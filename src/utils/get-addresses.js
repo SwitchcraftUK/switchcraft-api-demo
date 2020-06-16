@@ -13,7 +13,7 @@ export const getAddresses = async (
   );
   return result && result.map(addresses => {
     const fields = [
-      'orgn', 'subb', 'bnam', 'bnum', 'thor'
+      'fullAddress'
     ];
     return Object.entries(addresses)
       .filter(([key, value]) => fields.includes(key) && Boolean(value))
