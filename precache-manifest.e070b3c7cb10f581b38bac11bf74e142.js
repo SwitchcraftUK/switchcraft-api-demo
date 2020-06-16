@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "102e5ce9a63c1e0ff67d2a2308dd3645",
+    "revision": "a736d3d21cee1d3ed94b19fb897a2b00",
     "url": "/switchcraft-api-demo/index.html"
   },
   {
-    "revision": "29436008cb57403c8529",
+    "revision": "e09d9601c9a002f87dd4",
     "url": "/switchcraft-api-demo/static/css/main.d470a9c8.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/switchcraft-api-demo/static/js/2.0aaf3c60.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "29436008cb57403c8529",
-    "url": "/switchcraft-api-demo/static/js/main.f522b3a3.chunk.js"
+    "revision": "e09d9601c9a002f87dd4",
+    "url": "/switchcraft-api-demo/static/js/main.8ec723c1.chunk.js"
   },
   {
     "revision": "cf73dbd8a1ce5958a77c",

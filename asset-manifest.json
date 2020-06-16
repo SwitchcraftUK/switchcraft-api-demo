@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/switchcraft-api-demo/static/css/main.d470a9c8.chunk.css",
-    "main.js": "/switchcraft-api-demo/static/js/main.f522b3a3.chunk.js",
-    "main.js.map": "/switchcraft-api-demo/static/js/main.f522b3a3.chunk.js.map",
+    "main.js": "/switchcraft-api-demo/static/js/main.8ec723c1.chunk.js",
+    "main.js.map": "/switchcraft-api-demo/static/js/main.8ec723c1.chunk.js.map",
     "runtime-main.js": "/switchcraft-api-demo/static/js/runtime-main.74b67617.js",
     "runtime-main.js.map": "/switchcraft-api-demo/static/js/runtime-main.74b67617.js.map",
     "static/js/2.0aaf3c60.chunk.js": "/switchcraft-api-demo/static/js/2.0aaf3c60.chunk.js",
     "static/js/2.0aaf3c60.chunk.js.map": "/switchcraft-api-demo/static/js/2.0aaf3c60.chunk.js.map",
     "index.html": "/switchcraft-api-demo/index.html",
-    "precache-manifest.e4f4ff62ccd46744cee5efb896407d39.js": "/switchcraft-api-demo/precache-manifest.e4f4ff62ccd46744cee5efb896407d39.js",
+    "precache-manifest.e070b3c7cb10f581b38bac11bf74e142.js": "/switchcraft-api-demo/precache-manifest.e070b3c7cb10f581b38bac11bf74e142.js",
     "service-worker.js": "/switchcraft-api-demo/service-worker.js",
     "static/css/main.d470a9c8.chunk.css.map": "/switchcraft-api-demo/static/css/main.d470a9c8.chunk.css.map",
     "static/js/2.0aaf3c60.chunk.js.LICENSE.txt": "/switchcraft-api-demo/static/js/2.0aaf3c60.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.74b67617.js",
     "static/js/2.0aaf3c60.chunk.js",
     "static/css/main.d470a9c8.chunk.css",
-    "static/js/main.f522b3a3.chunk.js"
+    "static/js/main.8ec723c1.chunk.js"
   ]
 }
